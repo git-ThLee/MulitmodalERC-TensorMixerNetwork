@@ -452,7 +452,7 @@ class KEMDy20Dataset(KEMDBase):
 class HF_KEMD:
     def __init__(
         self,
-        paths: str = "kemdy19-kemdy20",
+        paths: str = "/kaggle/input/kemdy-dataset/kemdy19-kemdy20",
         validation_fold: int = 4,
         save_to_disk: bool = True,
         PRETRAINED_DATA_PATH: str = "./aihub",
@@ -490,8 +490,8 @@ class HF_KEMD:
         ds_name = f"{paths}_{self.mode.value}{validation_fold}_multilabel{multilabel}_rdeuce{remove_deuce}" # remove deuce 
         try:
             logger.info("Try Loading dataset %s from disk", ds_name)
-            ds_name_kaggle = '/kaggle/input/kemdy-dataset/' + ds_name
-            self.ds = datasets.load_from_disk(ds_name_kaggle)
+            #ds_name_kaggle = '/kaggle/input/kemdy-dataset/' +ds_name
+            self.ds = datasets.load_from_disk(ds_name)
             if mode == 'train':
               self.ds = self.ds.select(list(range(num_data)))
             print(self.ds)
