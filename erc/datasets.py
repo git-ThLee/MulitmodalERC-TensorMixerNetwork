@@ -493,6 +493,7 @@ class HF_KEMD:
             self.ds = datasets.load_from_disk(ds_name)
             if mode == 'train':
               self.ds = self.ds.select(list(range(num_data)))
+            print(self.ds)
             logger.info("Successfully loaded %s from disk", ds_name)
             logger.info("# Datapoints %s", len(self))
 
