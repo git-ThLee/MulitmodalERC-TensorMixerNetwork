@@ -24,8 +24,8 @@ def get_eval_group(df: pd.DataFrame) -> set:
 
 
 def kemdy19_get_rater(
-    base_path: str | Path = "/kaggle/input/KEMDy19",
-    save_path: str | Path = "/kaggle/input/kemdy19.csv",
+    base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy19",
+    save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy19.csv",
 ) -> Dict[int, pd.DataFrame]:
     # Annotation (ECG / EDA / Emotion / Valence & Arousal)
     male_annot_expr = "./annotation/Session*_M_*"
@@ -93,8 +93,8 @@ def kemdy19_get_rater(
 
 
 def kemdy20_get_rater(
-    base_path: str | Path = "/kaggle/input/KEMDy20_v1_1",
-    save_path: str | Path = "/kaggle/input/kemdy20.csv",
+    base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy20_v1_1",
+    save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy20.csv",
 ) -> Dict[int, pd.DataFrame]:
     # Annotation (ECG / EDA / Emotion / Valence & Arousal)
     base_path, save_path = Path(base_path), Path(save_path)

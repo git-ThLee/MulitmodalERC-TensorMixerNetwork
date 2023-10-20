@@ -53,8 +53,8 @@ def map_emotion(arr):
 
 
 def merge_csv_kemdy19(
-    base_path: str | Path = "/kaggle/input/KEMDy19",
-    save_path: str | Path = "/kaggle/input/kemdy19.csv",
+    base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy19",
+    save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy19.csv",
     exclude_multilabel: bool = True,
 ) -> pd.DataFrame:
     """ Merges all .csv files to create integrated single dataframe for all segments and sessions.
@@ -127,8 +127,8 @@ def merge_csv_kemdy19(
 
 
 def merge_csv_kemdy20(
-    base_path: str | Path = "/kaggle/input/KEMDy20_v1_1",
-    save_path: str | Path = "/kaggle/input/kemdy20.csv",
+    base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy20_v1_1",
+    save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy20.csv",
     exclude_multilabel: bool = True,
 ) -> pd.DataFrame:
     """ Merges all .csv files to create integrated single dataframe for all segments and sessions.

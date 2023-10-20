@@ -320,8 +320,8 @@ class KEMDBase(Dataset):
 
     def merge_csv(
         self,
-        base_path: str | Path = "/kaggle/input/KEMDy20_v1_1",
-        save_path: str | Path = "/kaggle/input/kemdy20.csv",
+        base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy20_v1_1",
+        save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy20.csv",
         exclude_multilabel: bool = True,
     ):
         """ Loads all annotation .csv and merge into a single csv.
@@ -331,16 +331,16 @@ class KEMDBase(Dataset):
 
 class KEMDy19Dataset(KEMDBase):
     NAME = "KEMDy19"
-    WAV_PATH_FMT = "/kaggle/input/KEMDy19/wav/Session{0}/Sess{0}_{1}"
-    EDA_PATH_FMT = "/kaggle/input/KEMDy19/EDA/Session{0}/Original/Sess{0}{1}.csv"
+    WAV_PATH_FMT = "/kaggle/input/kemdy-dataset/KEMDy19/wav/Session{0}/Sess{0}_{1}"
+    EDA_PATH_FMT = "/kaggle/input/kemdy-dataset/KEMDy19/EDA/Session{0}/Original/Sess{0}{1}.csv"
 
     NUM_SESSIONS = 20
-    TOTAL_DF_PATH = "/kaggle/input/kemdy19.csv"
+    TOTAL_DF_PATH = "/kaggle/input/kemdy-dataset/kemdy19.csv"
     TEXT_ENCODING: str = None
 
     def __init__(
         self,
-        base_path: str = "/kaggle/input/KEMDy19",
+        base_path: str = "/kaggle/input/kemdy-dataset/KEMDy19",
         generate_csv: bool = False,
         return_bio: bool = True,
         max_length_wav: int = 200_000,
@@ -369,8 +369,8 @@ class KEMDy19Dataset(KEMDBase):
 
     def merge_csv(
         self,
-        base_path: str | Path = "/kaggle/input/KEMDy19",
-        save_path: str | Path = "/kaggle/input/kemdy19.csv",
+        base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy19",
+        save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy19.csv",
         exclude_multilabel: bool = True,
     ):
         return merge_csv_kemdy19(base_path=base_path,
@@ -390,17 +390,17 @@ class KEMDy19Dataset(KEMDBase):
 
 class KEMDy20Dataset(KEMDBase):
     NAME = "KEMDy20"
-    WAV_PATH_FMT = "/kaggle/input/KEMDy20_v1_1/wav/Session{0}"
+    WAV_PATH_FMT = "/kaggle/input/kemdy-dataset/KEMDy20_v1_1/wav/Session{0}"
     # Not used yet
-    EDA_PATH_FMT = "/kaggle/input/KEMDy20v_1_1/EDA/Session{0}/Original/Sess{0}{1}.csv"
+    EDA_PATH_FMT = "/kaggle/input/kemdy-dataset/KEMDy20v_1_1/EDA/Session{0}/Original/Sess{0}{1}.csv"
 
     NUM_SESSIONS = 40
-    TOTAL_DF_PATH = "/kaggle/input/kemdy20.csv"
+    TOTAL_DF_PATH = "/kaggle/input/kemdy-dataset/kemdy20.csv"
     TEXT_ENCODING: str = "cp949"
 
     def __init__(
         self,
-        base_path: str = "/kaggle/input/KEMDy20_v1_1",
+        base_path: str = "/kaggle/input/kemdy-dataset/KEMDy20_v1_1",
         generate_csv: bool = False,
         return_bio: bool = False,
         max_length_wav: int = 200_000,
@@ -429,8 +429,8 @@ class KEMDy20Dataset(KEMDBase):
 
     def merge_csv(
         self,
-        base_path: str | Path = "/kaggle/input/KEMDy20_v1_1",
-        save_path: str | Path = "/kaggle/input/kemdy20.csv",
+        base_path: str | Path = "/kaggle/input/kemdy-dataset/KEMDy20_v1_1",
+        save_path: str | Path = "/kaggle/input/kemdy-dataset/kemdy20.csv",
         exclude_multilabel: bool = True,
     ):
         return merge_csv_kemdy20(base_path=base_path,
@@ -699,7 +699,7 @@ def get_dataloaders(ds_cfg: omegaconf.DictConfig,
 
 
 if __name__=="__main__":
-    dataset = KEMDy20Dataset(base_path="/kaggle/input/KEMDy20_v1_1",
+    dataset = KEMDy20Dataset(base_path="/kaggle/input/kemdy-dataset/KEMDy20_v1_1",
                              generate_csv=True,
                              return_bio=False,
                              validation_fold=4,
