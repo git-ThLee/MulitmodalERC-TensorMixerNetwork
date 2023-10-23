@@ -1,0 +1,17 @@
+_target_: erc.datasets.HF_KEMD
+paths: /kaggle/input/kemdy-dataset/kemdy19-kemdy20
+validation_fold: 4
+wav_processor: kresnik/wav2vec2-large-xlsr-korean
+sampling_rate: 16_000
+wav_max_length: 112_000 # 16_000 * 7, 7secs duration
+txt_processor: klue/roberta-large
+txt_max_length: 64
+load_from_cache_file: True
+num_proc: 1
+batched: True
+batch_size: 1000
+multilabel: True
+remove_deuce: False
+writer_batch_size: 1000
+num_data: False
+preprocess: True

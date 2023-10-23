@@ -1,0 +1,23 @@
+pytorch-lightning==1.9.4
+flake8
+black
+jupyter
+ipykernel
+pandas
+numpy
+hydra-core
+matplotlib
+seaborn
+tqdm
+torchmetrics
+transformers==4.26.1
+scipy
+pytest
+fire
+jiwer
+datasets==2.8.0
+accelerate
+wandb
+einops
+# irrcac
+scikit-learn

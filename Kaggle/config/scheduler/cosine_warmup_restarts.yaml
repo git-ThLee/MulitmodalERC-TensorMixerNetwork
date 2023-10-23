@@ -1,0 +1,10 @@
+scheduler:
+  _target_: erc.optims.cosine_annealing.CosineAnnealingWarmUpRestarts
+  T_0: 20000
+  T_up: 200 # Interval between~
+  T_mult: 2
+  gamma: 0.75
+  eta_max: 1e-5
+interval: step
+frequency: 1
+strict: False
