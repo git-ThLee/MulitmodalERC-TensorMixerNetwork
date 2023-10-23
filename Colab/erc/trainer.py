@@ -12,7 +12,7 @@ from torchmetrics.functional import concordance_corrcoef
 import wandb
 
 import erc
-
+import pandas as pd
 
 logger = erc.utils.get_logger(name=__name__)
 
@@ -293,5 +293,5 @@ def inference(config: omegaconf.DictConfig) -> None:
                                  return_predictions=True)
     prediction = module._sort_outputs(prediction)
     # TODO
-    print(prediction)
-    print(prediction.shape)
+    prediction_df = pd.DataFrame(prediction)
+    prediction_df.to_csv(f'predictions/prediction.csv', index=False)
