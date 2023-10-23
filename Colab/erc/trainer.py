@@ -242,6 +242,7 @@ def setup_trainer(config: omegaconf.DictConfig) -> pl.LightningModule:
     if ckpt:
         ckpt = torch.load(ckpt)
         model_ckpt = ckpt.pop("state_dict")
+        print('Ckpt Load !!')
     else:
         model_ckpt = None
 
@@ -292,4 +293,5 @@ def inference(config: omegaconf.DictConfig) -> None:
                                  return_predictions=True)
     prediction = module._sort_outputs(prediction)
     # TODO
-    breakpoint()
+    print(prediction)
+    print(prediction.shape)
