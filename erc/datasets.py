@@ -491,10 +491,6 @@ class HF_KEMD:
         try:
             logger.info("Try Loading dataset %s from disk", ds_name)
             print(ds_name)
-            file_list = os.listdir(ds_name)
-            # 파일 리스트 출력
-            for file in file_list:
-                print(file)
             self.ds = datasets.load_from_disk(ds_name)
             if mode == 'train':
               self.ds = self.ds.select(list(range(num_data)))
