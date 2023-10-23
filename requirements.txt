@@ -15,7 +15,7 @@ scipy
 pytest
 fire
 jiwer
-datasets
+datasets==2.8.0
 accelerate
 wandb
 einops
