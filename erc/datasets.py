@@ -490,6 +490,7 @@ class HF_KEMD:
         ds_name = f"{paths}_{self.mode.value}{validation_fold}_multilabel{multilabel}_rdeuce{remove_deuce}" # remove deuce 
         try:
             logger.info("Try Loading dataset %s from disk", ds_name)
+            print(ds_name)
             self.ds = datasets.load_from_disk(ds_name)
             if mode == 'train':
               self.ds = self.ds.select(list(range(num_data)))
